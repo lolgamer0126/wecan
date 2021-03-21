@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "video-detail">
+<h2 class = "our">{{object.title}}</h2>
+<video width="400" controls>
+    <source src="{{object.video.url}}" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+</div>
+{% endblock content %}

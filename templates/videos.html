@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class = "our">Бидний бэлтгэсэн подкастнууд</h1>
+<div class = "mdku">
+    {% for videos in object_list  %}
+    <div class = "video">
+        <p><a href = "{% url 'video_detail' videos.pk %}">{{videos.title}}</a></p>
+        <img src = "{{videos.picture.url}}" alt = "zuraggu">
+    </div>
+    <br>
+    {% endfor %}
+    </div>
+{% endblock content %}

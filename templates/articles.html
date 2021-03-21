@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for article in object_list %}
+    <div class = "row">
+        <div class = "column">
+            <a href = "{% url 'detail' article.pk %}">
+            <h1>{{article.title}}</h1></a>
+            <h3>{{article.preview|safe}}</h3>
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}

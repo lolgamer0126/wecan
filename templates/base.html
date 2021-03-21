@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+<head>
+
+<title>{% block title %}Wecan.mn{% endblock title %}</title>
+<link rel = "stylesheet" href = "{% static 'css/base.css' %}" >
+</head>
+<body>
+<div class = "navbar">
+    <ul>
+      <li><a class = "navbar-wecan" href = "{% url 'home' %}">Wecan</a></li>
+      <li><a class = "navbar-right" href = "{% url 'about' %}">Бидний тухай</a></li>
+      <li><a class = "navbar-right" href = "{% url 'contact' %}">Холбоо барих</a></li>
+      <li><a class = "navbar-right" href = "#"></a></li>
+    </ul>
+</div>
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>
