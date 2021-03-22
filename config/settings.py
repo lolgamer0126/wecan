@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from environs import Env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 env = Env()
 env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,7 +49,15 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
+    'cloudinary',
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'zmongolia',
+    'API_KEY': '781497941629231',
+    'API_SECRET': 'dzNIiMFb_OM5XgxK5QOtlo8dRDA',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,9 +95,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        "default":env.dj_db_url("DATABASE_URL")
-    }
+    'default': env.dj_db_url("DATABASE_URL")
 }
 
 
@@ -122,14 +131,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = "/home/ochko/Desktop/video/staticfiles"
+MEDIA_URL = '/home/ochko/Desktop/video/media/'
+MEDIA_ROOT = "/home/ochko/Desktop/video/media/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
