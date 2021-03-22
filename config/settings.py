@@ -142,3 +142,5 @@ MEDIA_URL = '/home/ochko/Desktop/video/media/'
 MEDIA_ROOT = "/home/ochko/Desktop/video/media/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+CONTENT_TYPES = ['image', 'video']
+MAX_UPLOAD_SIZE = "214958080"
