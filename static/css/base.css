@@ -157,3 +157,7 @@ body{
 .column h1{
     color: rgb(204, 251, 190);
 }
+.center1{
+    display: block;
+margin: 0 auto;
+}

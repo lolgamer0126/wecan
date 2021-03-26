@@ -3,9 +3,7 @@
 {% block content %}
 <div class = "video-detail">
 <h2 class = "our">{{object.title}}</h2>
-<video width="400" controls>
-    <source src="{{object.video.url}}" type="video/mp4">
-    Your browser does not support HTML5 video.
-</video>
+    <iframe class="center1" width="839" height="524" src="https://www.youtube.com/embed/{{object.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
 </div>
 {% endblock content %}
