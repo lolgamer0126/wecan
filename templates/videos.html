@@ -2,7 +2,7 @@
 {% block content %}
 <h1 class = "our">Бидний бэлтгэсэн подкастнууд</h1>
 <div class = "mdku">
-    {% for videos in object_list  %}
+    {% for videos in object_list reversed %}
     <div class = "video">
         <p><a href = "{% url 'video_detail' videos.pk %}">{{videos.title}}</a></p>
         <img src = "{{videos.picture.url}}" alt = "zuraggu">
